@@ -46,43 +46,58 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
-
-
-
+1. Open a new project using Quartus II.
+2. Declare the inputs and outputs inside module projname().
+3. Set the reset value using register.
+4. Use commands like begin and end to stimulate the counter.
+5. For Up counter increment the count and for Down counter decrement the count.
+6. End the verilog programming.
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Meiyarasi.V
+RegisterNumber:  212221230058
 */
-
-
-
-
-
-
+```
+module up_c(clock,reset,upcounter);
+input clock,reset;
+output reg[2:0] upcounter;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+upcounter=3'b 000;
+else
+upcounter=upcounter+1;
+end endmodule
+```
+### OUTPUT
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
-
+![output](./d1.png)
 ### TIMING DIGRAMS FOR COUNTER  
+![output](./d2.png)
+### TRUTH TABLE
+![output](./d3.png)
 
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
+### PROGRAM 
+```
+module up_c(clock,reset,upcounter);
+input clock,reset;
+output reg[2:0] upcounter;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+upcounter=3'b 000;
+else
+upcounter=upcounter+1;
+end endmodule
+```
+### OUTPUT
+### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+![output](./d4.png)
+### TIMING DIGRAMS FOR COUNTER  
+![output](./d5.png)
+### TRUTH TABLE
+![output](./d6.png)
 
 ### RESULTS 
+Hence the Four bit Up counter and Down counter is implemented successfully and its functionality is validated.
